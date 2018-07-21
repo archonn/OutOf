@@ -10,6 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('login','UserController@login');
+Route::get('mentee/verify/{token}','UserController@verifyUser');
+Route::post('login','UserController@loginAuth');
+Route::resource('mentee','UserController');
+
 
 Route::get('/', function () {
     return view('welcome');

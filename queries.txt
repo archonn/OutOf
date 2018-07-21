@@ -1,0 +1,30 @@
+INSERT INTO `countries`(`countryName`) VALUES ('Brunei');
+INSERT INTO `countries`(`countryName`) VALUES ('Cambodia');
+INSERT INTO `countries`(`countryName`) VALUES ('Indonesia');
+INSERT INTO `countries`(`countryName`) VALUES ('Laos');
+INSERT INTO `countries`(`countryName`) VALUES ('Myanmar');
+INSERT INTO `countries`(`countryName`) VALUES ('Malaysia');
+INSERT INTO `countries`(`countryName`) VALUES ('Phillipines');
+INSERT INTO `countries`(`countryName`) VALUES ('Singapore');
+INSERT INTO `countries`(`countryName`) VALUES ('Thailand');
+INSERT INTO `countries`(`countryName`) VALUES ('Vietnam');
+
+
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG1');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG2');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG3');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG4');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG5');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG6');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG7');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG8');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG9');
+INSERT INTO `topics`(`topicNo`) VALUES ('SDG10');
+
+
+INSERT INTO `resources`(`title`, `tag`) VALUES ('Quality Education in Myanmar', '1');
+INSERT INTO `resources`(`title`, `tag`) VALUES ('Quality Education in Indonesia', '3');
+INSERT INTO `resources`(`title`, `tag`) VALUES ('Quality Education in Laos', '5');
+INSERT INTO `resources`(`title`, `tag`) VALUES ('Unemployment in Myanmar', '1');
+INSERT INTO `resources`(`title`, `tag`) VALUES ('Myanmar and clean water issues', '1');
+
