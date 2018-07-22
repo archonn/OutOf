@@ -125,7 +125,7 @@ class UserController extends Controller
                 $topic=Topic::all()->toArray();
                 $countries=Country::all()->toArray();
 
-                return view('mentee.getStarted',compact('topic','countries'));
+                return view('mentee.getstarted1',compact('topic','countries'));
             }
             return redirect('data');
         }
