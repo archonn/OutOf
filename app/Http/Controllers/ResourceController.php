@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Resources;
+use App\Country;
 use Auth;
 
 class ResourceController extends Controller
@@ -13,12 +14,11 @@ class ResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() //country to be added later***
+    public function index() //topic to be added later***
     {
-        $topic=Auth::user()->prefTopic;
-
-        $resources=Resources::where('tag', $country)->get();
-        return view('mentee.dataView',compact('resources'));
+        $resources=Resources::all()->toArray();
+        $countries=Country::all()->toArray();
+        return view('mentee.dataView', compact('resources','countries'));
     }
 
     /**
@@ -48,6 +48,16 @@ class ResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function find(Request $request)  //to change with AJAX later**
+    {
+        $query=$request['search'];
+
+        $search=Resources::where('title','LIKE', '%'.$query.'%')->get();
+        $countries=Country::all()->toArray();
+
+        return view('mentee.dataView', compact('search', 'countries'));
+    }
+
     public function show($id)
     {
         //
