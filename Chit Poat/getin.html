@@ -19,12 +19,12 @@
   perspective: 1000px;
   padding: 20px 3px 20px 3px;
 }
-  .flip-container:hover .flipper, .flip-container.hover .flipper {
+  .flip-container.hover .flipper {
     transform: rotateY(180deg);
   }
 
 .flip-container, .front, .back {
-  height: 500px;
+  height: 550px;
   width: 700px;
 }
 
@@ -87,19 +87,35 @@
     </div>
   </nav>
 
-    <div class="text-center">  
-      <button class="btn btn-outline-danger shadow btn-lg mt-3 mb-3" id="flipbutt">
+    
+
+
+<div class="container flip flip-container" id="flip-toggle">
+  <div class="flipper">
+    <div class="front">
+    	<div class="text-center">  
+      <button class="btn btn-outline-danger shadow btn-lg mt-3" onclick="document.querySelector('#flip-toggle').classList.toggle('hover');">
           Don't have an account?
        </button>
     </div>
+    	<div class="logo">
+        <img src="images/outof2.png" alt="OutOfLogo" class="mx-auto d-block pd"/>
+      </div>
+      <form action="" name="login">
+      <input type="text" class="form-control pd" name="email" placeholder="Email">
+      <input type="password" class="form-control pd" name="password" placeholder="Password">
+    <button type="submit" class="btn btn-success shadow btn-block">Login</button>
+  </form>
 
-<div class="container flip-container" ontouchstart="this.classList.toggle('hover');">
-  <div class="flipper">
-    <div class="front">
     </div>
-    <div class="back">
+    <div class="back flip">
+    	<div class="text-center">  
+      <button class="btn btn-outline-success shadow btn-lg mt-3" onclick="document.querySelector('#flip-toggle').classList.toggle('hover');">
+          Already have an account?
+       </button>
+    </div>
       <div class="logo">
-        <img src="images/outof1.png" alt="OutOfLogo" class="pd"/>
+        <img src="images/outof1.png" alt="OutOfLogo" class="mx-auto d-block pd"/>
       </div>
       <form action="" name="register">
         <div class="input-group pd">
