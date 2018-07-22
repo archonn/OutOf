@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('country');
             $table->integer('status');
+            $table->integer('prefCountry');
+            $table->integer('prefTopic');
             $table->string('_token');
             $table->timestamps();
         });

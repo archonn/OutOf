@@ -10,11 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('login','UserController@login');
+Route::get('mentee/login','UserController@login');
 Route::get('mentee/verify/{token}','UserController@verifyUser');
-Route::post('login','UserController@loginAuth');
+Route::post('mentee/login','UserController@loginAuth');
+Route::get('mentee/getstarted','UserController@getStarted');
+Route::post('mentee/getstarted','UserController@recordPreference');
 Route::resource('mentee','UserController');
 
+Route::resource('data','ResourceController');
 
 Route::get('/', function () {
     return view('welcome');

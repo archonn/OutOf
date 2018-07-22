@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Topic;
+use App\Country;
+
 use Hash;
 use Auth;
 use Mail;
@@ -102,7 +105,7 @@ class UserController extends Controller
             }
             else
             {
-                return "Success!";
+                return redirect('mentee/getstarted');
             } 
         }
         else
@@ -110,7 +113,34 @@ class UserController extends Controller
             return back()->with('errors','Incorrect email or password!');
         }
     }
+    public function getStarted()
+    {
+        if(Auth::check())
+        {
+            $topic=Topic::all()->toArray();
+            $countries=Country::all()->toArray();
 
+            return view('mentee.getStarted',compact('topic','countries'));
+        }
+        else
+        {
+            return redirect('mentee/login')->with('errors','You need to login first');
+        }
+        
+    }
+
+    public function recordPreference(Request $request)
+    {
+        $topic=$request['topic'];
+        $country=$request['country'];
+
+        $user=User::find(Auth::user()->id);
+        $user->prefTopic=$topic;
+        $user->prefCountry=$country;
+        $user->save();
+
+        return redirect('data');
+    }
     /**
      * Display the specified resource.
      *

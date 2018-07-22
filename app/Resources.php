@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Resources extends Model
 {
-    public function country()
+    public function Country()
     {
     	return $this->belongsTo('App\Country', 'tag', 'countryID');
     }
-    public function topic()
+    public function Topic()
     {
     	return $this->belongsToMany('App\Topic','topic_post','resourceID','topicID');
     }

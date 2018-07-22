@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', '_token',
     ];
+
+    public function Country()
+    {
+        return $this->belongsTo('App\Country', 'prefCountry', 'countryID');
+    }
+    public function Topic()
+    {
+        return $this->belongsTo('App\Topic', 'prefTopic', 'topicID');
+    }
 }
