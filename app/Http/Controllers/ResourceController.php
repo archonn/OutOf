@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Resources;
 use App\Country;
+use App\User;
 use Auth;
 
 class ResourceController extends Controller
@@ -16,8 +17,12 @@ class ResourceController extends Controller
      */
     public function index() //topic to be added later***
     {
-        $resources=Resources::all()->toArray();
+        $resources=Resources::all();
         $countries=Country::all()->toArray();
+        foreach($resources as $cl)
+        {
+            $cl->Country;
+        }
         return view('mentee.dataView', compact('resources','countries'));
     }
 

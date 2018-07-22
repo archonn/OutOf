@@ -169,7 +169,7 @@
             </div><br />
             <small class="time">Posted on {{$r['created_at']}}</small>
               <div class="tags">
-                <span class="badge badge-success">{{$r['tag']}}</span>  
+                <span class="badge badge-success">{{$r->country->countryName}}</span>  
                </div>
              </button>
           </a>
@@ -184,7 +184,7 @@
   			</div><br />
   			<small class="time">Posted on {{$r['created_at']}}</small>
       		<div class="tags">
-      			<span class="badge badge-success">{{$r['tag']}}</span>  
+      			<span class="badge badge-success">{{$r->country->countryName}}</span>  
      			 </div>
      		 </button>
   	  </a>
