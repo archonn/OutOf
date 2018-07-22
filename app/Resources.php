@@ -8,7 +8,7 @@ class Resources extends Model
 {
     public function Country()
     {
-    	return $this->belongsTo('App\Country', 'tag', 'countryID');
+    	return $this->belongsTo('App\Country', 'countryID', 'tag');
     }
     public function Topic()
     {

@@ -9,7 +9,7 @@ class Country extends Model
     
     public function Resources()
     {
-    	return $this->hasMany('App\Resources', 'countryID', 'resourceID');
+    	return $this->hasMany('App\Resources', 'tag', 'countryID');
     }
     public function User()
     {
