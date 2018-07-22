@@ -15,7 +15,7 @@
 
   <style>
   .jumbotron {
-		background-image: url("images/duck.jpg");
+		background-image: url({{url('images/duck.jpg')}});
 		background-size: cover;
   }
 
@@ -125,7 +125,7 @@
       		</div>
     	</div> 
     <hr />
-    	<form action="">
+    	<form action={{url('data/search')}} method="GET">
 			<div class="form-group mx-auto">
 				<div class="input-group">
    					 <div class="input-group-prepend btn-group-toggle" data-toggle="buttons">
@@ -160,21 +160,37 @@
     <li class="page-item"><a class="page-link" href="#">3</a></li>
     <li class="page-item"><a class="page-link" href="#">Next</a></li>
   </ul>-->
-
-@foreach($resources as $r)
-	<a href="" class="card">
-   		<button class="card-body btn btn-outline-light text-dark">
-   			<div class="card-text">
-          {{$r['title']}}
-			</div><br />
-			<small class="time">Posted on {{$r['created_at']}}</small>
-    		<div class="tags">
-    			<span class="badge badge-success">{{$r['tag']}}</span>  
-   			 </div>
-   		 </button>
-	  </a>
-<br />
-@endforeach
+@if(isset($search))
+  @foreach($search as $r)
+    <a href="" class="card">
+            <button class="card-body btn btn-outline-light text-dark">
+              <div class="card-text">
+                {{$r['title']}}
+            </div><br />
+            <small class="time">Posted on {{$r['created_at']}}</small>
+              <div class="tags">
+                <span class="badge badge-success">{{$r['tag']}}</span>  
+               </div>
+             </button>
+          </a>
+      <br />
+  @endforeach
+@else
+  @foreach($resources as $r)
+  	<a href="" class="card">
+     		<button class="card-body btn btn-outline-light text-dark">
+     			<div class="card-text">
+            {{$r['title']}}
+  			</div><br />
+  			<small class="time">Posted on {{$r['created_at']}}</small>
+      		<div class="tags">
+      			<span class="badge badge-success">{{$r['tag']}}</span>  
+     			 </div>
+     		 </button>
+  	  </a>
+  <br />
+  @endforeach
+@endif
     <!--<ul class="pagination justify-content-center">
     <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
     <li class="page-item active"><a class="page-link" href="#">1</a></li>

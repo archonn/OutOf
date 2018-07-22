@@ -48,6 +48,16 @@ class ResourceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function find(Request $request)  //to change with AJAX later**
+    {
+        $query=$request['search'];
+
+        $search=Resources::where('title','LIKE', '%'.$query.'%')->get();
+        $countries=Country::all()->toArray();
+
+        return view('mentee.dataView', compact('search', 'countries'));
+    }
+
     public function show($id)
     {
         //
