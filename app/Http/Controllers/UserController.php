@@ -32,7 +32,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('mentee.register');
+        $country=Country::all()->toArray();
+        return view('mentee.registerLogin', compact('country'));
     }
 
     /**
@@ -88,7 +89,8 @@ class UserController extends Controller
 
     public function login()
     {
-        return view('mentee.login');
+        $country=Country::all()->toArray();
+        return view('mentee.registerLogin', compact('country'));
     }
 
     public function loginAuth(Request $request)
