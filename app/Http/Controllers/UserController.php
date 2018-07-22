@@ -55,11 +55,12 @@ class UserController extends Controller
 
         $user['password']=Hash::make($user['password']);
         User::create($user);
-        Mail::to($user['email'])->send(new RegisterVerification($user));
+        //Mail::to($user['email'])->send(new RegisterVerification($user));
 
         Session::regenerateToken();
 
-        return back()->with('success','Verification mail sent. Check your mail and verify your account.');
+        //return back()->with('success','Verification mail sent. Check your mail and verify your account.');
+        return redirect('mentee/login')->with('status', 'User account created successfully');
     }
 
     public function verifyUser($token)
@@ -117,10 +118,14 @@ class UserController extends Controller
     {
         if(Auth::check())
         {
-            $topic=Topic::all()->toArray();
-            $countries=Country::all()->toArray();
+            if(Auth::user()->prefTopic==0 && Auth::user()->prefCountry==0)
+            {
+                $topic=Topic::all()->toArray();
+                $countries=Country::all()->toArray();
 
-            return view('mentee.getStarted',compact('topic','countries'));
+                return view('mentee.getStarted',compact('topic','countries'));
+            }
+            return redirect('data');
         }
         else
         {

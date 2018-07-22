@@ -13,9 +13,11 @@ class ResourceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() //country to be added later***
     {
-        $resources=Resources::all()->toArray();
+        $topic=Auth::user()->prefTopic;
+
+        $resources=Resources::where('tag', $country)->get();
         return view('mentee.dataView',compact('resources'));
     }
 
