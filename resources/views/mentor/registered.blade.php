@@ -6,18 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href={{asset('css/nav.css')}}>
+  <link rel="stylesheet" href="nav.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-  <script src={{asset('js/nav.js')}}></script>
+  <script src="nav.js"></script>
 
+ 
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src={{asset('images/logo_y_s.png')}} alt="OutOf Logo" /></a>
+      <a class="navbar-brand" href="#"><img src="images/logo_y_s.png" alt="OutOf Logo" /></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -42,19 +43,23 @@
 
 
 <div class="container">
-  <h2 class="text-center text-info mt-3">Apply for mentor</h2>
-  <hr />
-<form action={{url('mentor')}} method="POST">
-  {{csrf_field()}}
-      <input type="text" class="form-control" name="name" placeholder="Full Name">
-      <input type="text" class="form-control mt-2" name="email" placeholder="Email">
-      <input type="text" class="form-control mt-2" name="organization" placeholder="Organization">
-      <div class="form-group mt-2">
-        <label for="apparea">Why do you want to apply as a mentor? :</label>
-            <textarea class="form-control" rows="5" id="apparea" name="why"></textarea>
-      </div> 
-    <button type="submit" class="btn btn-outline-warning mt-5 shadow btn-block">Apply</button>
-  </form>
+  
+  <div class="modal fade" id="oneline">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          Your application has been successfully submitted! <br />
+          We'll reply you soon!
+        </div>
+        
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-warning btn-block ">Return to Homepage</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <footer class="page-footer fixed-bottom container">
@@ -64,6 +69,11 @@
   </div>
 </footer>
 </body>
-
+<script>
+ $(window).on('load',function(){
+        $('#oneline').modal('show');
+    });
+$('#oneline').modal({backdrop: 'static', keyboard: false})  
+     </script>
 
 </html>

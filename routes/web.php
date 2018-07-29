@@ -20,6 +20,9 @@ Route::resource('mentee','UserController');
 Route::get('data/search', 'ResourceController@find');
 Route::resource('data','ResourceController');
 
+Route::get('mentor/registered', 'MentorController@registered');
+Route::resource('mentor', 'MentorController');
+
 Route::get('applymentor',function() { return view('mentee.mentorApply'); });
 
 Route::get('/', function () {
