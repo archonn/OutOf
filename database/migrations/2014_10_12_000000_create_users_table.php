@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('status');
             $table->integer('prefCountry');
             $table->integer('prefTopic');
+            $table->integer('')
             $table->string('_token');
             $table->timestamps();
         });

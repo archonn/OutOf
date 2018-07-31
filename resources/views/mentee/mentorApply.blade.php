@@ -188,7 +188,7 @@
   <span class="right-fold">
   </span>
 </div>
-      <a href={{}} class="btn btn-outline-success bm btn-lg" id="bm1" role="button">Find Mentors!</a><br />
+      <a href={{url('mentee/findmentor')}} class="btn btn-outline-success bm btn-lg" id="bm1" role="button">Find Mentors!</a><br />
       <span>or</span><br />
       <a href="#" class="btn bm btn-outline-secondary" role="button">Assign Automatically</a>
   </div>

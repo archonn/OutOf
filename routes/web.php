@@ -17,6 +17,7 @@ Route::get('mentee/getstarted','UserController@getStarted');
 Route::post('mentee/getstarted','UserController@recordPreference');
 Route::get('mentee/applymentor', 'UserController@apply');
 Route::get('mentee/findmentor', 'UserController@findMentor');
+Route::get('mentee/viewmentor/{id}', 'UserController@showMentor');
 Route::resource('mentee','UserController');
 
 Route::get('data/search', 'ResourceController@find');

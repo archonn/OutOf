@@ -35,4 +35,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Topic', 'prefTopic', 'topicID');
     }
+    public function Mentor()
+    {
+        return $this->belongsTo('App\Mentor', 'mentorID', 'id');
+    }
 }

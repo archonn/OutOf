@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Topic;
 use App\Country;
+use App\Mentor;
 
 use Hash;
 use Auth;
@@ -156,7 +157,8 @@ class UserController extends Controller
 
     public function findMentor()
     {
-        return view('mentee.findMentor');
+        $mentor=Mentor::all();
+        return view('mentee.findMentor', compact('mentor'));
     }
     /**
      * Display the specified resource.
@@ -166,7 +168,19 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+
+    }
+
+    /**
+     * Display the specified mentor
+     *
+     * @param int $mentorid
+     * @return view with specified mentor data
+     */
+    public function showMentor($id)
+    {
+        $mentor=Mentor::find($id);
+        return view('mentee.mentorProfile', compact('mentor'));
     }
 
     /**
