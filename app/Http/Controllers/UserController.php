@@ -148,6 +148,16 @@ class UserController extends Controller
 
         return redirect('data');
     }
+
+    public function apply()
+    {
+        return view('mentee.mentorApply');
+    }
+
+    public function findMentor()
+    {
+        return view('mentee.findMentor');
+    }
     /**
      * Display the specified resource.
      *

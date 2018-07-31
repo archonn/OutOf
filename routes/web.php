@@ -15,6 +15,8 @@ Route::get('mentee/verify/{token}','UserController@verifyUser');
 Route::post('mentee/login','UserController@loginAuth');
 Route::get('mentee/getstarted','UserController@getStarted');
 Route::post('mentee/getstarted','UserController@recordPreference');
+Route::get('mentee/applymentor', 'UserController@apply');
+Route::get('mentee/findmentor', 'UserController@findMentor');
 Route::resource('mentee','UserController');
 
 Route::get('data/search', 'ResourceController@find');
@@ -23,8 +25,10 @@ Route::resource('data','ResourceController');
 Route::get('mentor/registered', 'MentorController@registered');
 Route::resource('mentor', 'MentorController');
 
-Route::get('applymentor',function() { return view('mentee.mentorApply'); });
-
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('test', function() {
+	return view('mentee.getstarted1');
 });

@@ -45,6 +45,7 @@ class MentorController extends Controller
 
         return redirect('mentor/registered');
     }
+
     public function registered()
     {
         return view('mentor.registered');
