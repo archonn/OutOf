@@ -30,17 +30,16 @@ body {
   text-decoration: none;
   color:white;
   margin: 0 10px 0 10px; 
-}
-
-.nav-link, .navb {   
   font-weight: bold;
 }
 
 
+
 .nav-link:hover, .navbar-brand:hover {
-  font-size:14px;
+  transform: scale(1.2);
 }
 
 .nav-link, .navbar-brand, .nav-link:hover, .navbar-brand:hover {
   transition: 0.2s ease-in-out;
+
 }
