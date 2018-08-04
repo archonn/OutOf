@@ -1,5 +1,7 @@
 @extends('../app')
 
+@section('title', 'Get Started')
+
 @section('style')
 <style>
  .gs {
