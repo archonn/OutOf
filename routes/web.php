@@ -19,7 +19,7 @@ Route::post('mentee/getstarted','UserController@recordPreference');
 
 Route::get('mentee/applymentor', 'UserController@apply');
 Route::get('mentee/findmentor', 'UserController@findMentor');
-Route::get('mentee/sendrequest/{id}', 'UserController@sendMentorRequest');
+Route::post('mentee/sendrequest', 'UserController@sendMentorRequest');
 
 Route::get('mentee/{id}', 'UserController@show');
 

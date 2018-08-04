@@ -6,7 +6,7 @@
 <div class="container mt-3">
 
   <div class="media border p-3">
-    <img src="img_avatar3.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:250px;">
+    <img src={{asset('images/img_avatar.jpg')}} alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:250px;">
     <div class="media-body align-middle text-center mt-3">
       <h4>{{$user['name']}}</h4>
       <i class="mt-3">{{$user['email']}}</i>

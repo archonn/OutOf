@@ -7,7 +7,7 @@
 <div class="container mt-3">
 @if($mentor)
   <div class="media border p-3 mb-3">
-    <img src="img_avatar3.png" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:250px;">
+    <img src={{asset('images/img_avatar.jpg')}} alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:250px;">
     <div class="media-body align-middle text-center mt-3">
     	
       <h4>{{$mentor['name']}}</h4>
@@ -43,7 +43,12 @@
         </div>
         
         <div class="modal-footer">
-          <button type="buton" class="btn btn-success btn-block">Confirm!</button>
+          <form action={{url('mentee/sendrequest')}} method="post">
+            {{csrf_field()}}
+            <input type="hidden" name="mentor_id" value={{$mentor['id']}}>
+            <input type="hidden" name="users_id" value={{Auth::user()->id}}>
+          <button type="submit" class="btn btn-success btn-block">Confirm!</button>
+          </form>
         </div>
       </div>
     </div>

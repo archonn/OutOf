@@ -7,6 +7,7 @@ use App\User;
 use App\Topic;
 use App\Country;
 use App\Mentor;
+use App\Requests;
 
 use Hash;
 use Auth;
@@ -161,9 +162,13 @@ class UserController extends Controller
         return view('mentee.findMentor', compact('mentor'));
     }
 
-    public function sendMentorRequest($id)
+    public function sendMentorRequest(Request $request)
     {
-        return $id;
+        $data=['users_id'=>$request['users_id'],
+                'mentor_id'=>$request['mentor_id'],
+                'status'=>0];
+        Requests::create($data);
+        return redirect('mentee/applymentor')->with('status', 'Mentor requested successfully. Please wait for the reply');
     }
     /**
      * Display the specified resource.

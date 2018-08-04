@@ -90,26 +90,29 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-md navbar-fixed-top">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="#"><img src={{asset('images/logo_y_s.png')}} alt="OutOf Logo" /></a>
-  				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    			<span class="navbar-toggler-icon"></span>
- 				</button>
- 				 <div class="collapse navbar-collapse" id="collapsibleNavbar">
-   					 <ul class="navbar-nav">
-     					 <li class="nav-item">
-       					 <a class="nav-link" href="#">Link</a>
-     					 </li>
-     					 <li class="nav-item">
-     					   <a class="nav-link" href="#">Link</a>
-     					 </li>
-     					 <li class="nav-item">
-     					   <a class="nav-link" href="#">Link</a>
-     					 </li>    
-    				</ul>
- 				 </div>  
-		</div>
-	</nav>
+    <div class="container-fluid">
+      <a class="navbar-brand" href={{url('/')}}><img src={{asset('images/logo_y_s.png')}} alt="OutOf Logo" /></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+             <ul class="navbar-nav">
+              <li class="nav-item">
+                 <a class="nav-link" href={{url('data')}}>Explore</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href={{url('mentee/applymentor')}}>Apply for Mentor</a>
+               </li>
+               @if(!Auth::check())
+               <li class="nav-item">
+                 <a class="nav-link" href={{url('mentee/login')}}>Sign In</a>
+               </li>
+               @endif  
+            </ul>
+            
+         </div>  
+    </div>
+  </nav>
 
 <div class="jumbotron jumbotron-fluid">
   <div class="jumbcon container text-center">

@@ -24,22 +24,23 @@
         </button>
          <div class="collapse navbar-collapse" id="collapsibleNavbar">
              <ul class="navbar-nav">
-               <li class="nav-item">
-                 <a class="nav-link" href="#">Link</a>
+              <li class="nav-item">
+                 <a class="nav-link" href={{url('data')}}>Explore</a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link" href="#">Link</a>
+                 <a class="nav-link" href={{url('mentee/applymentor')}}>Apply for Mentor</a>
                </li>
+               @if(!Auth::check())
                <li class="nav-item">
-                 <a class="nav-link" href="#">Link</a>
-               </li>    
+                 <a class="nav-link" href={{url('mentee/login')}}>Sign In</a>
+               </li>
+               @endif  
             </ul>
-            <a href="#" class="btn btn-info btn-outline-light btn-sm float-right text-dark navb" role="button">Link Button</a>
+            
          </div>  
     </div>
   </nav>
   @yield('content')
-
   <footer class="page-footer fixed-bottom container">
   <hr />
   <div class="footer-copyright text-center mb-3">© 2018 Copyright:

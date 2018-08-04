@@ -10,8 +10,12 @@ class Mentor extends Model
         'name', 'organization', 'email', 'why'
     ];
 
-    public function User()
+    /*public function User()
     {
     	return $this->hasMany('App\User', 'mentorID', 'id');
+    }*/
+    public function Requests()
+    {
+        return $this->hasMany('App\Requests');
     }
 }

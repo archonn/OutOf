@@ -11,7 +11,7 @@
   <a href={{url('mentee/'.$u['id'])}} class="card mb-3">
       <button class="card-body shadow btn btn-outline-light text-dark">
         <div class="card-text media">
-            <img src="img_avatar3.png" alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:60px;">
+            <img src={{asset('images/img_avatar.jpg')}} alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:60px;">
             <div class="media-body">
 <h4>{{$u['name']}}</h4>
       <p>{{$u['email']}}</p>    

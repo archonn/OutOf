@@ -39,4 +39,8 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Mentor', 'mentorID', 'id');
     }
+    public function Requests()
+    {
+        return $this->hasMany('App\Requests');
+    }
 }
