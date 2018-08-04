@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Mentor;
 
+use App\User;
+
 class MentorController extends Controller
 {
     /**
@@ -57,6 +59,13 @@ class MentorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    public function menteeList()
+    {
+        $user=User::all();
+        return view('mentor.requestList', compact('user'));
+    }
+
     public function show($id)
     {
         $mentor=Mentor::find($id);

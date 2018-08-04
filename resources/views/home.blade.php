@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>OutOf</title>
-</head>
-<body>
+@extends('../app')
 
-</body>
-</html>
+@section('title', 'Home')
+
+@section('content')
+<div class="container">
+  
+</div>
+
+@stop

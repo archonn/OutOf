@@ -11,14 +11,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-  <script src="nav.js"></script>
+  <script src={{asset('js/nav.js')}}></script>
   @yield('style')
  
 </head>
 <body>
   <nav class="navbar navbar-expand-md navbar-fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src={{asset('images/logo_y_s.png')}} alt="OutOf Logo" /></a>
+      <a class="navbar-brand" href={{url('/')}}><img src={{asset('images/logo_y_s.png')}} alt="OutOf Logo" /></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -43,7 +43,7 @@
   <footer class="page-footer fixed-bottom container">
   <hr />
   <div class="footer-copyright text-center mb-3">© 2018 Copyright:
-    <a href=""> OutOf</a>. All Rights reserved.
+    <a href={{url('/')}}> OutOf</a>. All Rights reserved.
   </div>
 </footer>
 </body>
