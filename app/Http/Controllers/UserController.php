@@ -160,6 +160,11 @@ class UserController extends Controller
         $mentor=Mentor::all();
         return view('mentee.findMentor', compact('mentor'));
     }
+
+    public function sendMentorRequest($id)
+    {
+        return $id;
+    }
     /**
      * Display the specified resource.
      *
