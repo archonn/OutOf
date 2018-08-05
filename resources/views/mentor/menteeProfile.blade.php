@@ -42,7 +42,12 @@
         </div>
         
         <div class="modal-footer">
-          <button type="buton" class="btn btn-success btn-block">Confirm!</button>
+          <form action={{url('mentor/acceptrequest')}} method="POST">
+            {{csrf_field()}}
+            <input type="hidden" name="users_id" value={{$user['id']}}>
+            <input type="hidden" name="mentor_id" value="2">
+          <button type="submit" class="btn btn-success btn-block">Confirm!</button>
+        </form>
         </div>
       </div>
     </div>

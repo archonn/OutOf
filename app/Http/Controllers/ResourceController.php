@@ -17,13 +17,21 @@ class ResourceController extends Controller
      */
     public function index() //topic to be added later***
     {
-        $resources=Resources::all();
-        $countries=Country::all()->toArray();
-        foreach($resources as $cl)
+        if(Auth::check())
         {
-            $cl->Country;
+            $resources=Resources::all();
+            $countries=Country::all()->toArray();
+            foreach($resources as $cl)
+            {
+                $cl->Country;
+            }
+            return view('mentee.dataView', compact('resources','countries'));
         }
-        return view('mentee.dataView', compact('resources','countries'));
+        else
+        {
+            return redirect('mentee/login')->with('errors','You need to login first');
+        }
+        
     }
 
     /**

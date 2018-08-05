@@ -148,7 +148,7 @@
 @section('content')
 @if (\Session::has('status'))
       <br><div class="alert alert-success">
-          <p>{{ \Session::get('status') }}</p>
+          <p class="text-center">{{ \Session::get('status') }}</p>
       </div><br />
       @endif
   <div class="text-center mt-3 container border rounded shadow" id="mendiv">

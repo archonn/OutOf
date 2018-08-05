@@ -34,6 +34,7 @@ Route::resource('data','ResourceController');
 //------------------------------------------------------------------------------
 Route::get('mentor/registered', 'MentorController@registered');
 Route::get('mentor/requestlist', 'MentorController@menteeList');
+Route::post('mentor/acceptrequest', 'MentorController@acceptRequest');
 
 
 Route::resource('mentor', 'MentorController');

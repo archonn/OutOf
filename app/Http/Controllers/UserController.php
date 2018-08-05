@@ -135,7 +135,6 @@ class UserController extends Controller
         {
             return redirect('mentee/login')->with('errors','You need to login first');
         }
-        
     }
 
     public function recordPreference(Request $request)
@@ -153,13 +152,28 @@ class UserController extends Controller
 
     public function apply()
     {
-        return view('mentee.mentorApply');
+        if(Auth::check())
+        {
+            return view('mentee.mentorApply');
+        }
+        else
+        {
+            return redirect('mentee/login')->with('errors','You need to login first');
+        }   
     }
 
     public function findMentor()
     {
-        $mentor=Mentor::all();
-        return view('mentee.findMentor', compact('mentor'));
+        if(Auth::check())
+        {
+            $mentor=Mentor::all();
+            return view('mentee.findMentor', compact('mentor'));
+        }
+        else
+        {
+            return redirect('mentee/login')->with('errors','You need to login first');
+        }  
+        
     }
 
     public function sendMentorRequest(Request $request)
@@ -178,20 +192,15 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user=User::find($id);
-        return view('mentor.menteeProfile', compact('user'));
-    }
-
-    /**
-     * Display the specified mentor
-     *
-     * @param int $mentorid
-     * @return view with specified mentor data
-     */
-    public function showMentor($id)
-    {
-        $mentor=Mentor::find($id);
-        return view('mentee.mentorProfile', compact('mentor'));
+        if(Auth::check())
+        {
+            $user=User::find($id);
+            return view('mentor.menteeProfile', compact('user'));
+        }
+        else
+        {
+            return redirect('mentee/login')->with('errors','You need to login first');
+        }
     }
 
     /**
