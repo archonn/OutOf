@@ -11,44 +11,262 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-  <script src="nav.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <style>
+  .jumbo1, .jumbo3, .jumbo5 {
+    background-color: white;    
+  }
+
+  .jumbo2, .jumbo4 {
+    background-color: #f1c40f;    
+  }
+
+
+  .jumbotron {
+    height:550px;
+    margin: 0 0 0 0;
+  }
+
+  .homelogo {
+    height: 400px;
+  }
+
+  .out {
+    font-weight: bold;
+    font-size:50px;
+  }
+
+  .j1t2 {
+      padding: 0 0 0 100px;
+  }
+
+  .j1c {
+    margin: 80px 0 0 0;
+  }
+
+  .bif {
+    font-size:48px;
+  }
+
+  .bbif {
+    font-size: 72px;
+  }
+
+  .hover:hover {
+    transform: scale(1.2);
+  }
+
+  .hover, .hover:hover {
+    transition: 0.2s ease-in-out;
+  }
+
+  .why1:hover {
+    color: red ;
+  }
+
+  .why2:hover {
+    color: green;
+  }
+
+  .why3:hover {
+    color: #f1c40f;
+  }
+
+  .floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+
+  </style>
 
  
 </head>
 <body>
-  <nav class="navbar navbar-expand-md navbar-fixed-top">
+  <nav class="navbar navbar-expand-md navbar-fixed-top fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="images/logo_y_s.png" alt="OutOf Logo" /></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
           <span class="navbar-toggler-icon"></span>
         </button>
          <div class="collapse navbar-collapse" id="collapsibleNavbar">
-             <ul class="navbar-nav">
+             <ul class="navbar-nav">               
                <li class="nav-item">
-                 <a class="nav-link" href="#">Apply for Mentor</a>
+                 <a class="nav-link" href="#">Quiz</a>
+               </li> 
+               <li class="nav-item">
+                 <a class="nav-link" href="#">Topics</a>
                </li>
                <li class="nav-item">
-                 <a class="nav-link" href="#">Sign In</a>
-               </li>  
+                 <a class="nav-link" href="#">Apply for Mentor</a>
+               </li>   
             </ul>
-            
+              <ul class="navbar-nav ml-auto">
+                  <a class="nav-link" href="#">Profile</a>
+                  <a class="nav-link" href="#">Sign In</a>
+              </ul>
          </div>  
     </div>
   </nav>
 
     
+<div class="jumbotron jumbo1 jumbotron-fluid">
+  <div class="container j1">
+    <div class="jlogo">
+      <img src="images/logo_y.png" alt="Home Logo" class="homelogo d-block float-left" /> 
+    </div>
+      <div class="j1c float-right">
+        <h1 class="j1t1"><i class="out">Out</i> Of the Box</h1>
+        <br />
+        <h1 class="j1t2"><i class="out">Out</i> Of the Limits</h1>
+      </div>
+  </div>
 
+</div>
 
-<div class="container">
-  
+<div class="jumbotron jumbo2 jumbotron-fluid">
+  <div class="container text-center j2">
+    <hr />
+      <h1>About Us</h1>      
+    <hr />
+    <br />
+    <p style="font-size:20px;">
+      <b>OutOf</b> is a platform for people who wants to solve problems regarding with SDGs to make the world a better place.
+    </p>
+    <p style="font-size:25px;">That includes everyone. <br /> That includes <b style="font-size: 30px">YOU!</b></p>
+    <br />
+    <p class="text-light"><i class="fas fa-user bif col-sm-4 hover " ></i><i class="fas fa-user bif col-sm-4 hover "></i><i class="fas fa-user bif col-sm-4 hover "></i></p>
+    <p class="text-light"><i class="fas fa-user bif col-sm-3 hover " ></i><i class="fas fa-user bif col-sm-3 hover "></i><i class="fas fa-user bif col-sm-3 hover "></i><i class="fas fa-user bif col-sm-3 hover " ></i></p>
+  </div>
+</div>
+
+<div class="jumbotron jumbo3 jumbotron-fluid">
+  <div class="container text-center j3">
+    <hr />
+      <h1>Why us?</h1>      
+    <hr />
+    <br />
+    <p style="font-size:25px; margin-bottom:75px;">We have</p>
+    <div class="row">
+      <div class="col-sm-4 hover why1">
+        <i class="fas fa-newspaper mb-3 bbif" ></i><br /><span class="text">Useful Resources</span>
+      </div>
+      <div class="col-sm-4 hover why2">
+        <i class="fas fa-user-tie mb-3 bbif" ></i><br /><span class="text">Professional Mentors</span>
+      </div>
+      <div class="col-sm-4 hover why3">
+        <i class="fas fa-lightbulb mb-3 bbif" ></i><br /><span class="text">Awesome Suggestions</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron jumbo4 jumbotron-fluid">
+  <div class="container text-center j4">
+    <hr />
+      <h1>For Mentors</h1>      
+    <hr />
+    <p style="font-size:20px; margin-bottom: 75px">
+      We warmly welcome both experienced and fresh mentors who would like to contribute! <br /> Please head on to the link below to get started as a mentor!
+    </p>
+    <div class="hover why2">
+        <i class="fas fa-user-tie mb-3 bbif" ></i><br /><a href="#" class="btn btn-large btn-outline-success">Apply for Mentors</a>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron jumbo5 jumbotron-fluid">
+  <div class="container text-center j5">
+    <hr />
+      <h1>Join us now!</h1>      
+    <hr />
+    <p style="font-size:20px; margin-bottom: 75px">
+      Because every second is important and there is no time to waste to make this world a better place!
+    </p>
+    <div class="hover why1">
+        <i class="fas fa-heart mb-3 bbif floating" style="margin-right:30px;" ></i><br /><a href="#" class="btn btn-large btn-outline-danger mt-3">Get Started!</a>
+    </div>
+  </div>
 </div>
 
 <footer class="page-footer fixed-bottom container">
   <hr />
   <div class="footer-copyright text-center mb-3">© 2018 Copyright:
-    <a href=""> OutOf</a>. All Rights reserved.
+    <a href="#"> OutOf</a>. All Rights reserved.
   </div>
 </footer>
+
+
+<script>
+$(document).ready(function(){
+    
+  $(".navbar").hide();
+  $(".jlogo").hide();
+  $(".j1t1").hide();
+  $(".j1t2").hide();
+  $(".j2").hide();
+  $(".j3").hide();
+  $(".j4").hide();
+  $(".j5").hide();
+
+  $('.jlogo').fadeIn(2000);
+        $('.j1t1').fadeIn(6000);
+        $('.j1t2').fadeIn(10000);
+
+  
+  $(function () {
+
+    $(window).scroll(function () {
+           
+      if ($(this).scrollTop() > 100) {
+        $('.navbar').fadeIn();
+      } else {
+        $('.navbar').fadeOut();
+      }
+    });
+
+
+    $(window).scroll(function () {
+           
+      if ($(this).scrollTop() > 450) {
+        $('.j2').fadeIn();
+      }
+    });
+
+    $(window).scroll(function () {
+           
+      if ($(this).scrollTop() > 1000) {
+        $('.j3').fadeIn();
+      }
+    });
+
+    $(window).scroll(function () {
+           
+      if ($(this).scrollTop() > 1550) {
+        $('.j4').fadeIn();
+      }
+    });
+
+    $(window).scroll(function () {
+           
+      if ($(this).scrollTop() > 2000) {
+        $('.j5').fadeIn();
+      }
+    });
+  
+  });
+
+});
+  </script>
 </body>
 
 </html>
